@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>den pin</title>
+</head>
+<body>
+<script>
+    class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+        setEnergy(energy){
+            this.energy = energy;
+        }
+        getEnergy(){
+            return this.energy;
+        }
+        decreaseEnergy(){
+            if (this.energy > 0){
+                this.energy --;
+            }
+        }
+    }
+    class FlashLamp {
+        constructor(battery) {
+            this.battery = battery;
+        }
+        setBattery(battery){
+            this.battery = battery;
+        }
+        getBatteryInfo(){
+            return this.battery;
+        }
+        light (){
+            if (this.status){
+                alert("Linghting")
+            }else {
+                alert("Not lighting")
+            }
+        };
+        turnon(){
+            this.status = true;
+        }
+        turnoff(){
+            this.status = false;
+        }
+    };
+        let battery = new Battery();
+        battery.setEnergy(10);
+
+        let flashlamp = new FlashLamp();
+        flashlamp.setBattery(battery);
+
+        document.write("Battery info: " + flashlamp.getBatteryInfo() + "<br/>")
+        flashlamp.light();
+
+        document.write("Turn on <br/>")
+        flashlamp.turnon();
+        flashlamp.turnoff();
+        document.write("Battery info: " + flashlamp.getBatteryInfo() + "<br/>");
+
+        document.write("turn off <br/>")
+        flashlamp.turnoff();
+        flashlamp.light();
+
+</script>
+</body>
+</html>
